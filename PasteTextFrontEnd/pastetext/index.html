@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pastetext">
+
+<head>
+    <script src = "../scripts/angular.min.js"></script>
+    <script src = "../scripts/angular-animate.js"></script>
+    <script src = "../app.js" ></script>
+    <script src = "pastetextController.js" ></script>
+    <script src = "pastetextService.js" ></script>
+    <script src = "config/PasteText.js" ></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <div ng-controller="pasteTextController" style="width: 100%">
+		<div ng-hide="inputPage">
+			<div>
+				User Name
+				<input type="text" placeholder="User Name ..." ng-model="userName">
+			</div>
+			<br>
+			<div>
+				Title
+				<input type="text" placeholder="Title ..." ng-model="title">
+			</div>
+			<br>
+			<br>
+			<div>
+			Paste Text
+				<textarea width="100%" ng-model="pastedText">
+				</textarea>
+			</div>
+			<br>
+			<div>
+				<input type="button" value="Paste" ng-click="saveText()">
+			</div>
+		</div>
+
+		<div ng-hide="showedPage">
+			<input type="button" value="Paste Another Text" ng-click="backToPaste()">
+			<p>{{result.id}}</p>
+			<br>
+			<p>{{result.userName}}</p>
+			<br>
+			<p>{{result.title}}</p>
+			<br>
+			<p>{{result.text}}</p>
+		</div>	
+    </div>
+</body>
+
+
+</html>
