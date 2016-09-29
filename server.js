@@ -6,10 +6,10 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // make express look in the public directory for assets (css/js/img)
-app.use(express.static(__dirname + '/PasteTextFrontEnd/pastetext'));
+app.use(express.static(__dirname + '/PasteTextFrontEnd'));
 
 // set the home page route
-app.get('/', function(req, res) {
+app.get('/pastetext/', function(req, res) {
 
     // make sure index is in the right directory. In this case /app/index.html
     res.render('index');
